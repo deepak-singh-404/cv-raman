@@ -1,6 +1,6 @@
 const initialState = {
     user: {},
-    isAuthenticated: false,
+    isAuthenticated: false
 }
 
 
@@ -12,6 +12,8 @@ const initialState = {
 
 // }
 
+
+// what is datatype of action?
 
 const userReducer = (state = initialState, action) => {
     switch (action.type) {

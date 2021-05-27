@@ -2,20 +2,21 @@ import React, {useState} from 'react'
 
 import { setUser} from '../redux/actions/userAction'
 
-import { useDispatch} from 'react-redux'
+import { useHistory,Redirect } from 'react-router-dom'
+
+import { useDispatch } from 'react-redux'
+
 const Login = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const dispatch = useDispatch()
+    const history = useHistory()
     const formHandler = (e) => {
         e.preventDefault()
         if (email && password) {
-            console.log({ email, password })
-            //save this data to redux
-            //CREATING
-            //useDispatch()
-            dispatch(setUser({"email":email, "password":password}))
             
+            dispatch(setUser({ email, password }))
+            history.push('/dashboard')
         }
         else {
             alert("Fields are empty")

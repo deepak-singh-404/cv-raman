@@ -1,4 +1,7 @@
-const setUser = (data) => {
+
+
+
+export const setUser = (data) => {
     return {
         type: "SET_USER",
         payload: data
@@ -6,7 +9,7 @@ const setUser = (data) => {
 
 }
 
-const logout = () => {
+export const logout = () => {
     return {
         type: "USER_LOGOUT"
     }
